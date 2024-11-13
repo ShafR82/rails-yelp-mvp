@@ -1,0 +1,20 @@
+<div class="container">
+     <div class="card-category my-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <%=@restaurant.name%>'s' detail
+    </div>
+    
+    <ul>
+        <li>Name: <%=@restaurant.name%></li>
+        <li>Address : <%=@restaurant.address%></li>
+        <li>Category : <%=@restaurant.category%></li>
+        <li>Phone : <%=@restaurant.phone_number%></li>
+    </ul>
+    <h1><%=@restaurant.name%>'s reviews</h1>
+    <ul>
+    <%@restaurant.reviews.each do |review|%>
+        <li><%=review.content%> (<%=review.rating%>/5)</li>
+    <%end%>
+    </ul>
+    <%= link_to "Add a review", new_restaurant_review_path(@restaurant), class: "btn-gradient" %>
+    <%= link_to "Back to Home page", restaurants_path, class: "btn-gradient" %>
+</div>    

@@ -1,0 +1,13 @@
+<div class="container">
+     <div class="card-category my-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        Add a new restaurant
+    </div>
+    <%= simple_form_for @restaurant, html: { class: "my-3"}  do |f| %>
+        <%= f.input :name %>
+        <%= f.input :address %>
+        <%= f.input :category %>
+        <%= f.input :phone_number %>
+        <%= f.submit %>
+    <% end %>
+    <%= link_to "Back to Home page", restaurants_path, class: "btn-gradient my-3" %>
+</div>    

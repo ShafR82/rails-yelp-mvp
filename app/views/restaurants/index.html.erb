@@ -1,0 +1,16 @@
+
+<div class="container">
+    <div class="card-category my-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        Restaurant's list
+    </div>
+    <%=link_to "Add a restaurant", new_restaurant_path, class: "btn-gradient"%>
+    <%@restaurants.each do |restaurant| %>
+        <div class="card-product my-3">
+            <img src="https://loremflickr.com/320/240/dish,<%=restaurant.category%>/all"/>               
+            <div class="card-product-infos">
+                <h2><%= link_to restaurant.name, restaurant_path(restaurant)%> (<%=restaurant.reviews.count%>)</h2>
+            </div>    
+        </div>
+    <%end%>
+    <%=link_to "Add a restaurant", new_restaurant_path, class: "btn-gradient"%>    
+</div>    
